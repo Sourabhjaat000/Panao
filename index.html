@@ -259,12 +259,44 @@
             color: #dadce0;
         }
         
-        /* Cropper Container */
+        /* Gallery Style Cropper Container */
         .cropper-container {
             width: 100%;
             height: 400px;
             position: relative;
             display: none;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .cropper-container img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+        
+        .cropper-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .cropper-control-btn {
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        .cropper-control-btn:hover {
+            background-color: var(--dark-blue);
         }
         
         /* Adjustment Controls */
@@ -325,6 +357,32 @@
             border: 1px solid #e8eaed;
             background-color: white;
             font-size: 0.9rem;
+        }
+        
+        /* KB Selection */
+        .kb-selection {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .kb-option {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+        
+        .kb-option:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .kb-option.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
         
         /* Action Buttons */
@@ -425,6 +483,42 @@
             color: var(--text-color);
         }
         
+        /* Article Section */
+        .article-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .article-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .article-section h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .article-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .article-section ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .article-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
         /* Privacy Notice */
         .privacy-notice {
             background: white;
@@ -518,6 +612,18 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            .article-section {
+                padding: 1.5rem;
+            }
+            
+            .kb-selection {
+                flex-wrap: wrap;
+            }
+            
+            .cropper-container {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -533,12 +639,13 @@
             <li><a href="#tool">Photo Tool</a></li>
             <li><a href="#requirements">Requirements</a></li>
             <li><a href="#guide">How To Use</a></li>
+            <li><a href="#article">PAN Card Guide</a></li>
         </ul>
     </header>
     
     <section class="hero">
         <h1>Free PAN Card Photo Resizer Tool</h1>
-        <p>Create perfectly sized 35x35mm photos for PAN card applications with automatic background removal and manual cropping. No registration required.</p>
+        <p>Create perfectly sized 35x35mm photos for PAN card applications with automatic background removal, manual cropping, and quality adjustment. No registration required.</p>
     </section>
     
     <div class="main-container">
@@ -578,6 +685,16 @@
                             <div class="control-row">
                                 <input type="range" id="fileQuality" min="10" max="100" value="90" class="slider-control">
                                 <span class="value-display" id="qualityDisplay">90%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label>Target File Size:</label>
+                            <div class="kb-selection">
+                                <div class="kb-option" data-kb="50">50KB</div>
+                                <div class="kb-option" data-kb="100">100KB</div>
+                                <div class="kb-option active" data-kb="200">200KB</div>
+                                <div class="kb-option" data-kb="max">Max Quality</div>
                             </div>
                         </div>
                         
@@ -719,6 +836,143 @@
                 </div>
             </div>
         </div>
+
+        <div class="article-section" id="article">
+            <h2>Complete Guide to PAN Card Photos: Requirements, Tips, and Common Mistakes</h2>
+            
+            <p>A Permanent Account Number (PAN) card is an essential identity document for financial transactions in India. One of the most common reasons for PAN card application rejection is incorrect photographs. This comprehensive guide covers everything you need to know about PAN card photo specifications, how to take the perfect photo, and how to use our free online PAN card photo resizer tool.</p>
+            
+            <h3>Why PAN Card Photo Specifications Matter</h3>
+            <p>The Income Tax Department of India has strict guidelines for PAN card photographs to ensure consistency and prevent fraud. Your PAN card photo must meet specific size, quality, and composition requirements to be accepted. Using our PAN card photo maker tool ensures your photo meets all official requirements for both online and offline applications.</p>
+            
+            <h3>Detailed PAN Card Photo Specifications</h3>
+            <ul>
+                <li><strong>Size:</strong> Exactly 35mm x 35mm (3.5cm x 3.5cm)</li>
+                <li><strong>Resolution:</strong> Minimum 200 DPI (300 DPI recommended for best quality)</li>
+                <li><strong>Background:</strong> Plain white or light-colored with no patterns or textures</li>
+                <li><strong>Face Position:</strong> Centered with face covering 70-80% of the photo area</li>
+                <li><strong>Head Height:</strong> 25-35mm from chin to crown of head</li>
+                <li><strong>Eye Level:</strong> Eyes should be 25-35mm from the bottom of the photo</li>
+                <li><strong>Expression:</strong> Neutral with mouth closed (no smiling, frowning, or exaggerated expressions)</li>
+                <li><strong>Eyes:</strong> Both eyes must be open and clearly visible</li>
+                <li><strong>Head Coverings:</strong> Only permitted for religious reasons (must not obscure facial features)</li>
+                <li><strong>Glasses:</strong> Allowed but must be clear with no glare or reflections</li>
+                <li><strong>File Format:</strong> JPEG or PNG preferred for online applications</li>
+                <li><strong>File Size:</strong> Under 100KB for online submissions</li>
+                <li><strong>Color Mode:</strong> RGB color (no black and white or sepia photos)</li>
+            </ul>
+            
+            <h3>How to Take a Perfect PAN Card Photo at Home</h3>
+            <p>Follow these professional tips to capture a PAN card-worthy photo using just your smartphone:</p>
+            
+            <h4>1. Setup Your Background</h4>
+            <p>Choose a plain white or light-colored wall as your background. Ensure there are no shadows, patterns, or objects visible. Stand about 1-2 feet away from the wall to prevent shadows.</p>
+            
+            <h4>2. Lighting Conditions</h4>
+            <p>Natural daylight is ideal for PAN card photos. Face a window or go outside in open shade. Avoid direct sunlight which creates harsh shadows. If using artificial light, position two light sources at 45-degree angles to your face to eliminate shadows.</p>
+            
+            <h4>3. Camera Positioning</h4>
+            <p>Place the camera at eye level about 4-5 feet away. Use the rear camera for better quality. Ensure your entire head and shoulders are in frame with space around all sides.</p>
+            
+            <h4>4. Pose and Expression</h4>
+            <p>Face the camera directly with both ears visible. Maintain a neutral expression with mouth closed. Keep both eyes open and look directly at the camera lens.</p>
+            
+            <h4>5. Clothing Choices</h4>
+            <p>Wear normal everyday clothing that contrasts with your background. Avoid white tops if using a white background. Solid colors work best - avoid busy patterns or logos.</p>
+            
+            <h3>Common PAN Card Photo Mistakes to Avoid</h3>
+            <p>These are the most frequent reasons for PAN card photo rejection:</p>
+            <ul>
+                <li>Incorrect dimensions (not 35x35mm)</li>
+                <li>Face too small or too large in the frame</li>
+                <li>Non-white or patterned background</li>
+                <li>Shadows on face or background</li>
+                <li>Smiling or exaggerated facial expressions</li>
+                <li>Eyes closed or looking away</li>
+                <li>Hair covering eyes or eyebrows</li>
+                <li>Glare on glasses</li>
+                <li>Wearing hats or non-religious head coverings</li>
+                <li>Low resolution or blurry image</li>
+                <li>Image too dark or overexposed</li>
+                <li>Red-eye effect from flash</li>
+                <li>Dated appearance (photo should be recent, within 3 months)</li>
+            </ul>
+            
+            <h3>How to Use Our PAN Card Photo Resizer Tool</h3>
+            <p>Our free online PAN card photo editor makes it easy to create perfectly sized photos that meet all official requirements:</p>
+            
+            <h4>Step 1: Upload Your Photo</h4>
+            <p>Click the upload area or drag and drop your photo. We accept JPG, PNG, and even PDF files. The tool works with photos from smartphones, digital cameras, or scanned documents.</p>
+            
+            <h4>Step 2: Automatic Sizing</h4>
+            <p>Our tool automatically detects faces and crops to the required 35x35mm dimensions at 300 DPI resolution. The face will be properly positioned to cover 70-80% of the frame.</p>
+            
+            <h4>Step 3: Manual Adjustments (Optional)</h4>
+            <p>Use the manual crop feature for precise positioning. Adjust brightness and contrast if needed to ensure optimal lighting. The quality slider lets you balance file size and image clarity.</p>
+            
+            <h4>Step 4: Download Your Photo</h4>
+            <p>Save your perfectly sized PAN card photo in JPG, PNG, or PDF format. The tool automatically removes background shadows and ensures white background compliance.</p>
+            
+            <h3>PAN Card Photo Requirements for Special Cases</h3>
+            
+            <h4>For Infants and Children</h4>
+            <p>Children under 5 years have slightly relaxed requirements but still need a clear photo with eyes open. The child should be positioned against a white background with no toys or other objects.</p>
+            
+            <h4>For Religious Head Coverings</h4>
+            <p>Religious headwear is permitted but must not obscure any facial features. The face must be clearly visible from the bottom of the chin to the top of the forehead.</p>
+            
+            <h4>For People with Disabilities</h4>
+            <p>Special accommodations are made for those unable to meet standard requirements due to medical conditions. Contact the PAN card helpdesk for specific guidance in these cases.</p>
+            
+            <h3>Frequently Asked Questions</h3>
+            
+            <h4>Can I use a selfie for my PAN card photo?</h4>
+            <p>While technically possible if it meets all requirements, selfies are not recommended as they often have perspective distortion, poor lighting, and incorrect framing.</p>
+            
+            <h4>Is black and white photo acceptable for PAN card?</h4>
+            <p>No, only color photographs are accepted for PAN card applications. Black and white or sepia photos will be rejected.</p>
+            
+            <h4>Can I wear glasses in my PAN card photo?</h4>
+            <p>Yes, you can wear glasses but ensure there's no glare on the lenses and your eyes are clearly visible. Tinted glasses are not permitted.</p>
+            
+            <h4>How recent should my PAN card photo be?</h4>
+            <p>The photo should be taken within the last 3 months to accurately represent your current appearance.</p>
+            
+            <h4>Can I smile in my PAN card photo?</h4>
+            <p>No, you should maintain a neutral expression with mouth closed. Smiling or other exaggerated expressions may lead to rejection.</p>
+            
+            <h4>What's the best file format for online PAN card application?</h4>
+            <p>JPEG (JPG) format with high quality (80-90%) is recommended for online submissions as it provides good quality at small file sizes.</p>
+            
+            <h3>Professional Tips for Perfect PAN Card Photos</h3>
+            <ul>
+                <li>Take multiple photos to have options to choose from</li>
+                <li>Use natural daylight for the most flattering, shadow-free lighting</li>
+                <li>Check for stray hairs or clothing wrinkles before taking the photo</li>
+                <li>Remove shiny makeup or oil that might cause reflections</li>
+                <li>Ensure your entire face is in sharp focus with no motion blur</li>
+                <li>Use our PAN card photo size checker tool to verify dimensions before submission</li>
+                <li>For printed photos, use matte photo paper to prevent glare</li>
+                <li>If wearing religious headgear, include a signed declaration with your application</li>
+            </ul>
+            
+            <h3>Why Choose Our PAN Card Photo Resizer?</h3>
+            <p>Our free online tool offers several advantages over other PAN card photo makers:</p>
+            <ul>
+                <li>100% compliant with official Income Tax Department specifications</li>
+                <li>No registration or personal information required</li>
+                <li>Processes images locally in your browser - your photos never leave your device</li>
+                <li>Advanced face detection for automatic perfect cropping</li>
+                <li>Manual adjustment options for complete control</li>
+                <li>Background optimization for perfect white background</li>
+                <li>Multiple output formats (JPG, PNG, PDF)</li>
+                <li>Quality and lighting adjustment tools</li>
+                <li>Mobile-friendly interface works on all devices</li>
+                <li>No watermarks or ads on your final photo</li>
+            </ul>
+            
+            <p>Creating the perfect PAN card photo has never been easier. Use our free tool today to ensure your application is processed quickly without photo-related delays or rejections.</p>
+        </div>
         
         <div class="privacy-notice">
             <p><strong>Privacy Notice:</strong> All photo processing happens in your browser. We do not store, upload, or access your images. Your photos remain 100% private on your device.</p>
@@ -734,6 +988,7 @@
             <a href="#tool">Photo Tool</a>
             <a href="#requirements">Requirements</a>
             <a href="#guide">How To Use</a>
+            <a href="#article">PAN Card Guide</a>
             <a href="privacy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>
         </div>
@@ -746,387 +1001,554 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script>
-        // Initialize PDF.js
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
-        
-        // DOM Elements
-        const fileInput = document.getElementById('fileInput');
-        const uploadArea = document.getElementById('uploadArea');
-        const uploadBtn = document.getElementById('uploadBtn');
-        const previewPlaceholder = document.getElementById('previewPlaceholder');
-        const imagePreview = document.getElementById('imagePreview');
-        const cropperContainer = document.getElementById('cropperContainer');
-        const cropBtn = document.getElementById('cropBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const resetBtn = document.getElementById('resetBtn');
-        const fileNameInput = document.getElementById('fileName');
-        const fileFormatSelect = document.getElementById('fileFormat');
-        const qualitySlider = document.getElementById('fileQuality');
-        const qualityDisplay = document.getElementById('qualityDisplay');
-        const brightnessSlider = document.getElementById('brightness');
-        const brightnessDisplay = document.getElementById('brightnessDisplay');
-        const contrastSlider = document.getElementById('contrast');
-        const contrastDisplay = document.getElementById('contrastDisplay');
-        
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Global Variables
-        let cropper;
-        let currentImage;
-        let originalImageData;
-        
-        // Event Listeners
-        fileInput.addEventListener('change', handleFileSelect);
-        uploadArea.addEventListener('click', () => fileInput.click());
-        uploadBtn.addEventListener('click', () => fileInput.click());
-        uploadArea.addEventListener('dragover', handleDragOver);
-        uploadArea.addEventListener('dragleave', handleDragLeave);
-        uploadArea.addEventListener('drop', handleDrop);
-        cropBtn.addEventListener('click', toggleCropper);
-        downloadBtn.addEventListener('click', downloadImage);
-        resetBtn.addEventListener('click', resetTool);
-        
-        // Slider Events
-        qualitySlider.addEventListener('input', updateQualityDisplay);
-        brightnessSlider.addEventListener('input', updateBrightnessDisplay);
-        contrastSlider.addEventListener('input', updateContrastDisplay);
-        
-        // Display Update Functions
-        function updateQualityDisplay() {
-            qualityDisplay.textContent = `${qualitySlider.value}%`;
-        }
-        
-        function updateBrightnessDisplay() {
-            brightnessDisplay.textContent = brightnessSlider.value;
-            applyImageAdjustments();
-        }
-        
-        function updateContrastDisplay() {
-            contrastDisplay.textContent = contrastSlider.value;
-            applyImageAdjustments();
-        }
-        
-        // Drag and Drop Handlers
-        function handleDragOver(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            uploadArea.style.borderColor = var(--primary-color);
-            uploadArea.style.backgroundColor = 'rgba(26, 115, 232, 0.1)';
-        }
-        
-        function handleDragLeave(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            uploadArea.style.borderColor = '#dadce0';
-            uploadArea.style.backgroundColor = '#f8f9fa';
-        }
-        
-        function handleDrop(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            uploadArea.style.borderColor = '#dadce0';
-            uploadArea.style.backgroundColor = '#f8f9fa';
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize PDF.js
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
             
-            const file = e.dataTransfer.files[0];
-            if (!file) return;
+            // DOM Elements
+            const fileInput = document.getElementById('fileInput');
+            const uploadArea = document.getElementById('uploadArea');
+            const uploadBtn = document.getElementById('uploadBtn');
+            const previewPlaceholder = document.getElementById('previewPlaceholder');
+            const imagePreview = document.getElementById('imagePreview');
+            const cropperContainer = document.getElementById('cropperContainer');
+            const cropBtn = document.getElementById('cropBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const fileNameInput = document.getElementById('fileName');
+            const fileFormatSelect = document.getElementById('fileFormat');
+            const qualitySlider = document.getElementById('fileQuality');
+            const qualityDisplay = document.getElementById('qualityDisplay');
+            const brightnessSlider = document.getElementById('brightness');
+            const brightnessDisplay = document.getElementById('brightnessDisplay');
+            const contrastSlider = document.getElementById('contrast');
+            const contrastDisplay = document.getElementById('contrastDisplay');
+            const kbOptions = document.querySelectorAll('.kb-option');
             
-            processFile(file);
-        }
-        
-        // File Processing
-        function handleFileSelect(e) {
-            const file = e.target.files[0];
-            if (!file) return;
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
             
-            processFile(file);
-        }
-        
-        function processFile(file) {
-            const reader = new FileReader();
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
             
-            // Check if file is PDF
-            if (file.type === 'application/pdf') {
-                extractImageFromPDF(file);
-                return;
+            // Global Variables
+            let cropper;
+            let currentImage;
+            let originalImageData;
+            let targetKB = 200; // Default target file size
+            
+            // Event Listeners
+            fileInput.addEventListener('change', handleFileSelect);
+            uploadArea.addEventListener('click', () => fileInput.click());
+            uploadBtn.addEventListener('click', () => fileInput.click());
+            uploadArea.addEventListener('dragover', handleDragOver);
+            uploadArea.addEventListener('dragleave', handleDragLeave);
+            uploadArea.addEventListener('drop', handleDrop);
+            cropBtn.addEventListener('click', toggleCropper);
+            downloadBtn.addEventListener('click', downloadImage);
+            resetBtn.addEventListener('click', resetTool);
+            
+            // KB Selection Events
+            kbOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    kbOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    if (this.dataset.kb === 'max') {
+                        targetKB = null; // No target, use max quality
+                        qualitySlider.value = 100;
+                    } else {
+                        targetKB = parseInt(this.dataset.kb);
+                        adjustQualityForTargetSize();
+                    }
+                    
+                    updateQualityDisplay();
+                    applyImageAdjustments();
+                });
+            });
+            
+            // Slider Events
+            qualitySlider.addEventListener('input', updateQualityDisplay);
+            brightnessSlider.addEventListener('input', updateBrightnessDisplay);
+            contrastSlider.addEventListener('input', updateContrastDisplay);
+            
+            // Initialize displays
+            updateQualityDisplay();
+            updateBrightnessDisplay();
+            updateContrastDisplay();
+            
+            // Display Update Functions
+            function updateQualityDisplay() {
+                const value = qualitySlider.value;
+                qualityDisplay.textContent = `${value}%`;
+                document.getElementById('qualityValue').textContent = value;
             }
             
-            reader.onload = function(e) {
-                previewPlaceholder.style.display = 'none';
-                imagePreview.style.display = 'block';
-                imagePreview.src = e.target.result;
-                
-                // Store original image data
-                originalImageData = e.target.result;
-                currentImage = imagePreview;
-                
-                // Enable buttons
-                cropBtn.disabled = false;
-                downloadBtn.disabled = false;
-                
-                // Initialize image adjustments
+            function updateBrightnessDisplay() {
+                const value = brightnessSlider.value;
+                brightnessDisplay.textContent = value;
+                document.getElementById('brightnessValue').textContent = value;
                 applyImageAdjustments();
             }
             
-            reader.readAsDataURL(file);
+            function updateContrastDisplay() {
+                const value = contrastSlider.value;
+                contrastDisplay.textContent = value;
+                document.getElementById('contrastValue').textContent = value;
+                applyImageAdjustments();
+            }
             
-            // Set filename
-            const cleanName = file.name.replace(/\.[^/.]+$/, ""); // Remove extension
-            fileNameInput.value = cleanName.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-pan-card';
-        }
-        
-        function extractImageFromPDF(file) {
-            const reader = new FileReader();
-            
-            reader.onload = function(e) {
-                const typedArray = new Uint8Array(e.target.result);
+            // Adjust quality based on target file size
+            function adjustQualityForTargetSize() {
+                if (!currentImage || !targetKB) return;
                 
-                // Load the PDF
-                pdfjsLib.getDocument(typedArray).promise.then(function(pdf) {
-                    // Get the first page
-                    return pdf.getPage(1);
-                }).then(function(page) {
-                    const viewport = page.getViewport({ scale: 2.0 });
+                // Start with high quality
+                let quality = 90;
+                let step = 5;
+                let bestQuality = quality;
+                let bestSizeDiff = Infinity;
+                
+                // Create test canvas
+                const testCanvas = document.createElement('canvas');
+                testCanvas.width = 413;
+                testCanvas.height = 413;
+                const ctx = testCanvas.getContext('2d');
+                
+                // Draw test image
+                const img = new Image();
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, testCanvas.width, testCanvas.height);
                     
-                    // Create canvas to render PDF page
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
+                    // Binary search for optimal quality
+                    let low = 10;
+                    let high = 100;
+                    let mid;
+                    let blob;
                     
-                    // Render PDF page to canvas
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
+                    for (let i = 0; i < 10; i++) {
+                        mid = Math.floor((low + high) / 2);
+                        const dataUrl = testCanvas.toDataURL('image/jpeg', mid / 100);
+                        blob = dataURLToBlob(dataUrl);
+                        const sizeKB = Math.round(blob.size / 1024);
+                        
+                        if (sizeKB <= targetKB) {
+                            bestQuality = mid;
+                            low = mid + 1;
+                        } else {
+                            high = mid - 1;
+                        }
+                    }
                     
-                    return page.render(renderContext).promise.then(function() {
-                        // Convert canvas to image
-                        const imageData = canvas.toDataURL('image/jpeg', 0.9);
+                    // Set the quality slider
+                    qualitySlider.value = bestQuality;
+                    updateQualityDisplay();
+                    applyImageAdjustments();
+                };
+                
+                img.src = currentImage.src;
+            }
+            
+            // Convert data URL to blob
+            function dataURLToBlob(dataUrl) {
+                const arr = dataUrl.split(',');
+                const mime = arr[0].match(/:(.*?);/)[1];
+                const bstr = atob(arr[1]);
+                let n = bstr.length;
+                const u8arr = new Uint8Array(n);
+                
+                while (n--) {
+                    u8arr[n] = bstr.charCodeAt(n);
+                }
+                
+                return new Blob([u8arr], { type: mime });
+            }
+            
+            // Drag and Drop Handlers
+            function handleDragOver(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                uploadArea.style.borderColor = 'var(--primary-color)';
+                uploadArea.style.backgroundColor = 'rgba(26, 115, 232, 0.1)';
+            }
+            
+            function handleDragLeave(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                uploadArea.style.borderColor = '#dadce0';
+                uploadArea.style.backgroundColor = '#f8f9fa';
+            }
+            
+            function handleDrop(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                uploadArea.style.borderColor = '#dadce0';
+                uploadArea.style.backgroundColor = '#f8f9fa';
+                
+                const file = e.dataTransfer.files[0];
+                if (!file) return;
+                
+                processFile(file);
+            }
+            
+            // File Processing
+            function handleFileSelect(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                processFile(file);
+            }
+            
+            function processFile(file) {
+                const reader = new FileReader();
+                
+                // Check if file is PDF
+                if (file.type === 'application/pdf') {
+                    extractImageFromPDF(file);
+                    return;
+                }
+                
+                reader.onload = function(e) {
+                    previewPlaceholder.style.display = 'none';
+                    imagePreview.style.display = 'block';
+                    imagePreview.src = e.target.result;
+                    
+                    // Store original image data
+                    originalImageData = e.target.result;
+                    currentImage = imagePreview;
+                    
+                    // Enable buttons
+                    cropBtn.disabled = false;
+                    downloadBtn.disabled = false;
+                    
+                    // Initialize image adjustments
+                    applyImageAdjustments();
+                    
+                    // Adjust quality if target KB is set
+                    if (targetKB) {
+                        adjustQualityForTargetSize();
+                    }
+                }
+                
+                reader.onerror = function() {
+                    alert('Error reading file. Please try another image.');
+                };
+                
+                reader.readAsDataURL(file);
+                
+                // Set filename
+                const cleanName = file.name.replace(/\.[^/.]+$/, ""); // Remove extension
+                fileNameInput.value = cleanName.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-pan-card';
+            }
+            
+            function extractImageFromPDF(file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const typedArray = new Uint8Array(e.target.result);
+                    
+                    // Load the PDF
+                    pdfjsLib.getDocument(typedArray).promise.then(function(pdf) {
+                        // Get the first page
+                        return pdf.getPage(1);
+                    }).then(function(page) {
+                        const viewport = page.getViewport({ scale: 2.0 });
                         
-                        // Display the image
-                        previewPlaceholder.style.display = 'none';
-                        imagePreview.style.display = 'block';
-                        imagePreview.src = imageData;
+                        // Create canvas to render PDF page
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
                         
-                        // Store original image data
-                        originalImageData = imageData;
-                        currentImage = imagePreview;
+                        // Render PDF page to canvas
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
                         
-                        // Enable buttons
-                        cropBtn.disabled = false;
-                        downloadBtn.disabled = false;
-                        
-                        // Initialize image adjustments
-                        applyImageAdjustments();
-                        
-                        // Set filename
-                        const cleanName = file.name.replace(/\.[^/.]+$/, ""); // Remove extension
-                        fileNameInput.value = cleanName.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-pan-card';
+                        return page.render(renderContext).promise.then(function() {
+                            // Convert canvas to image
+                            const imageData = canvas.toDataURL('image/jpeg', 0.9);
+                            
+                            // Display the image
+                            previewPlaceholder.style.display = 'none';
+                            imagePreview.style.display = 'block';
+                            imagePreview.src = imageData;
+                            
+                            // Store original image data
+                            originalImageData = imageData;
+                            currentImage = imagePreview;
+                            
+                            // Enable buttons
+                            cropBtn.disabled = false;
+                            downloadBtn.disabled = false;
+                            
+                            // Initialize image adjustments
+                            applyImageAdjustments();
+                            
+                            // Adjust quality if target KB is set
+                            if (targetKB) {
+                                adjustQualityForTargetSize();
+                            }
+                            
+                            // Set filename
+                            const cleanName = file.name.replace(/\.[^/.]+$/, ""); // Remove extension
+                            fileNameInput.value = cleanName.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-pan-card';
+                        });
+                    }).catch(function(error) {
+                        console.error('PDF processing error:', error);
+                        alert('Error processing PDF. Please try with an image file instead.');
                     });
-                });
-            };
+                };
+                
+                reader.onerror = function() {
+                    alert('Error reading PDF file. Please try another file.');
+                };
+                
+                reader.readAsArrayBuffer(file);
+            }
             
-            reader.readAsArrayBuffer(file);
-        }
-        
-        // Image Cropping
-        function toggleCropper() {
-            if (cropperContainer.style.display === 'block') {
-                // Apply crop
-                const croppedCanvas = cropper.getCroppedCanvas({
-                    width: 413, // 35mm at 300dpi
-                    height: 413,
-                    minWidth: 413,
-                    minHeight: 413,
-                    maxWidth: 413,
-                    maxHeight: 413,
-                    fillColor: '#fff'
-                });
+            // Image Cropping
+            function toggleCropper() {
+                // Check if we have an image to work with
+                if (!currentImage || !originalImageData) {
+                    alert('Please upload an image first');
+                    return;
+                }
+
+                if (cropper) {
+                    // Apply crop if cropper exists
+                    try {
+                        const croppedCanvas = cropper.getCroppedCanvas({
+                            width: 413, // 35mm at 300dpi
+                            height: 413,
+                            minWidth: 413,
+                            minHeight: 413,
+                            maxWidth: 413,
+                            maxHeight: 413,
+                            fillColor: '#fff'
+                        });
+                        
+                        if (croppedCanvas) {
+                            imagePreview.src = croppedCanvas.toDataURL('image/jpeg', qualitySlider.value / 100);
+                            cropperContainer.style.display = 'none';
+                            imagePreview.style.display = 'block';
+                            cropBtn.innerHTML = '<i class="fas fa-crop"></i> Manual Crop';
+                            
+                            // Destroy cropper
+                            cropper.destroy();
+                            cropper = null;
+                        }
+                    } catch (e) {
+                        console.error('Error applying crop:', e);
+                        alert('Error applying crop. Please try again.');
+                    }
+                } else {
+                    // Initialize cropper
+                    imagePreview.style.display = 'none';
+                    cropperContainer.style.display = 'block';
+                    cropperContainer.innerHTML = '';
+                    
+                    const cropperImage = document.createElement('img');
+                    cropperImage.src = imagePreview.src;
+                    cropperImage.style.maxWidth = '100%';
+                    cropperImage.style.maxHeight = '100%';
+                    cropperContainer.appendChild(cropperImage);
+                    
+                    cropper = new Cropper(cropperImage, {
+                        aspectRatio: 1,
+                        viewMode: 1,
+                        autoCropArea: 0.8,
+                        responsive: true,
+                        guides: false,
+                        center: true,
+                        background: false,
+                        movable: true,
+                        rotatable: false,
+                        scalable: false,
+                        zoomable: true,
+                        cropBoxMovable: true,
+                        cropBoxResizable: true,
+                        toggleDragModeOnDblclick: false,
+                        minContainerWidth: 300,
+                        minContainerHeight: 300,
+                        ready() {
+                            // Set crop box to 35x35mm (413x413px at 300dpi)
+                            const containerData = cropper.getContainerData();
+                            const cropBoxWidth = 413;
+                            const cropBoxHeight = 413;
+                            
+                            cropper.setCropBoxData({
+                                left: (containerData.width - cropBoxWidth) / 2,
+                                top: (containerData.height - cropBoxHeight) / 2,
+                                width: cropBoxWidth,
+                                height: cropBoxHeight
+                            });
+                        }
+                    });
+                    
+                    cropBtn.innerHTML = '<i class="fas fa-check"></i> Apply Crop';
+                }
+            }
+            
+            // Image Adjustments
+            function applyImageAdjustments() {
+                if (!currentImage || !originalImageData) return;
                 
-                imagePreview.src = croppedCanvas.toDataURL('image/jpeg', qualitySlider.value / 100);
-                cropperContainer.style.display = 'none';
-                imagePreview.style.display = 'block';
-                cropBtn.innerHTML = '<i class="fas fa-crop"></i> Manual Crop';
+                const brightness = parseInt(brightnessSlider.value);
+                const contrast = parseInt(contrastSlider.value);
+                const quality = parseInt(qualitySlider.value) / 100;
                 
-                // Destroy cropper
-                cropper.destroy();
-            } else {
-                // Initialize cropper
+                // Create temporary image to apply filters
+                const tempImage = new Image();
+                tempImage.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = tempImage.width;
+                    canvas.height = tempImage.height;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Apply filters
+                    ctx.filter = `
+                        brightness(${100 + brightness}%)
+                        contrast(${100 + contrast}%)
+                    `;
+                    
+                    ctx.drawImage(tempImage, 0, 0);
+                    
+                    // Update the preview image
+                    if (!cropper || cropperContainer.style.display !== 'block') {
+                        imagePreview.src = canvas.toDataURL('image/jpeg', quality);
+                    }
+                };
+                
+                tempImage.src = originalImageData;
+            }
+            
+            // Download Image
+            function downloadImage() {
+                if (!currentImage) return;
+                
+                const format = fileFormatSelect.value;
+                const quality = qualitySlider.value / 100;
+                const fileName = fileNameInput.value || 'pan-card-photo';
+                
+                // Create canvas to ensure proper sizing
+                const canvas = document.createElement('canvas');
+                canvas.width = 413; // 35mm at 300dpi
+                canvas.height = 413;
+                const ctx = canvas.getContext('2d');
+                
+                // Fill with white background (for JPG/PDF)
+                if (format !== 'png') {
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
+                
+                // Draw the image
+                const img = new Image();
+                img.onload = function() {
+                    // If we have a cropper and it's active, use the cropped image
+                    if (cropper && cropperContainer.style.display === 'block') {
+                        const croppedCanvas = cropper.getCroppedCanvas({
+                            width: 413,
+                            height: 413,
+                            fillColor: format !== 'png' ? '#fff' : 'transparent'
+                        });
+                        ctx.drawImage(croppedCanvas, 0, 0);
+                    } else {
+                        // Draw the adjusted image
+                        ctx.filter = `
+                            brightness(${100 + parseInt(brightnessSlider.value)}%)
+                            contrast(${100 + parseInt(contrastSlider.value)}%)
+                        `;
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    }
+                    
+                    // Create download link
+                    const link = document.createElement('a');
+                    
+                    if (format === 'pdf') {
+                        // For PDF, we'll use a library like jsPDF in a real implementation
+                        // This is simplified for the demo
+                        const pdfData = canvas.toDataURL('image/jpeg', quality);
+                        link.href = pdfData;
+                        link.download = `${fileName}.pdf`;
+                    } else {
+                        const imageData = canvas.toDataURL(`image/${format}`, quality);
+                        link.href = imageData;
+                        link.download = `${fileName}.${format}`;
+                    }
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                };
+                
+                img.src = currentImage.src;
+            }
+            
+            // Reset Tool
+            function resetTool() {
+                fileInput.value = '';
+                previewPlaceholder.style.display = 'flex';
                 imagePreview.style.display = 'none';
-                cropperContainer.style.display = 'block';
+                imagePreview.src = '';
+                cropperContainer.style.display = 'none';
                 cropperContainer.innerHTML = '';
                 
-                const cropperImage = document.createElement('img');
-                cropperImage.src = imagePreview.src;
-                cropperImage.style.maxWidth = '100%';
-                cropperContainer.appendChild(cropperImage);
+                if (cropper) {
+                    cropper.destroy();
+                    cropper = null;
+                }
                 
-                cropper = new Cropper(cropperImage, {
-                    aspectRatio: 1,
-                    viewMode: 1,
-                    autoCropArea: 0.8,
-                    responsive: true,
-                    guides: false,
-                    center: true,
-                    background: false,
-                    movable: true,
-                    rotatable: false,
-                    scalable: false,
-                    zoomable: true,
-                    cropBoxMovable: true,
-                    cropBoxResizable: true,
-                    toggleDragModeOnDblclick: false,
-                    minContainerWidth: 300,
-                    minContainerHeight: 300,
-                    ready() {
-                        // Set crop box to 35x35mm (413x413px at 300dpi)
-                        const containerData = cropper.getContainerData();
-                        const cropBoxWidth = 413;
-                        const cropBoxHeight = 413;
+                cropBtn.disabled = true;
+                downloadBtn.disabled = true;
+                cropBtn.innerHTML = '<i class="fas fa-crop"></i> Manual Crop';
+                
+                // Reset sliders
+                fileNameInput.value = 'pan-card-photo';
+                fileFormatSelect.value = 'jpg';
+                qualitySlider.value = 90;
+                qualityDisplay.textContent = '90%';
+                document.getElementById('qualityValue').textContent = '90';
+                brightnessSlider.value = 0;
+                brightnessDisplay.textContent = '0';
+                document.getElementById('brightnessValue').textContent = '0';
+                contrastSlider.value = 0;
+                contrastDisplay.textContent = '0';
+                document.getElementById('contrastValue').textContent = '0';
+                
+                // Reset KB selection
+                kbOptions.forEach(opt => opt.classList.remove('active'));
+                document.querySelector('.kb-option[data-kb="200"]').classList.add('active');
+                targetKB = 200;
+                
+                // Clear image data
+                currentImage = null;
+                originalImageData = null;
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        // Close mobile menu if open
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                         
-                        cropper.setCropBoxData({
-                            left: (containerData.width - cropBoxWidth) / 2,
-                            top: (containerData.height - cropBoxHeight) / 2,
-                            width: cropBoxWidth,
-                            height: cropBoxHeight
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
                         });
                     }
                 });
-                
-                cropBtn.innerHTML = '<i class="fas fa-check"></i> Apply Crop';
-            }
-        }
-        
-        // Image Adjustments
-        function applyImageAdjustments() {
-            if (!currentImage) return;
-            
-            const brightness = parseInt(brightnessSlider.value);
-            const contrast = parseInt(contrastSlider.value);
-            
-            // Create temporary image to apply filters
-            const tempImage = new Image();
-            tempImage.onload = function() {
-                const canvas = document.createElement('canvas');
-                canvas.width = tempImage.width;
-                canvas.height = tempImage.height;
-                const ctx = canvas.getContext('2d');
-                
-                // Apply filters
-                ctx.filter = `
-                    brightness(${100 + brightness}%)
-                    contrast(${100 + contrast}%)
-                `;
-                
-                ctx.drawImage(tempImage, 0, 0);
-                imagePreview.src = canvas.toDataURL('image/jpeg', qualitySlider.value / 100);
-            };
-            
-            tempImage.src = originalImageData;
-        }
-        
-        // Download Image
-        function downloadImage() {
-            if (!currentImage) return;
-            
-            const format = fileFormatSelect.value;
-            const quality = qualitySlider.value / 100;
-            const fileName = fileNameInput.value || 'pan-card-photo';
-            
-            // Create canvas to ensure proper sizing
-            const canvas = document.createElement('canvas');
-            canvas.width = 413; // 35mm at 300dpi
-            canvas.height = 413;
-            const ctx = canvas.getContext('2d');
-            
-            // Fill with white background (for JPG/PDF)
-            if (format !== 'png') {
-                ctx.fillStyle = '#ffffff';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-            }
-            
-            // Draw the image
-            const img = new Image();
-            img.onload = function() {
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                
-                // Create download link
-                const link = document.createElement('a');
-                
-                if (format === 'pdf') {
-                    // For PDF, we'll use a library like jsPDF in a real implementation
-                    // This is simplified for the demo
-                    const pdfData = canvas.toDataURL('image/jpeg', quality);
-                    link.href = pdfData;
-                    link.download = `${fileName}.pdf`;
-                } else {
-                    const imageData = canvas.toDataURL(`image/${format}`, quality);
-                    link.href = imageData;
-                    link.download = `${fileName}.${format}`;
-                }
-                
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            };
-            
-            img.src = currentImage.src;
-        }
-        
-        // Reset Tool
-        function resetTool() {
-            fileInput.value = '';
-            previewPlaceholder.style.display = 'flex';
-            imagePreview.style.display = 'none';
-            imagePreview.src = '';
-            cropperContainer.style.display = 'none';
-            cropperContainer.innerHTML = '';
-            
-            if (cropper) {
-                cropper.destroy();
-                cropper = null;
-            }
-            
-            cropBtn.disabled = true;
-            downloadBtn.disabled = true;
-            cropBtn.innerHTML = '<i class="fas fa-crop"></i> Manual Crop';
-            
-            // Reset sliders
-            fileNameInput.value = 'pan-card-photo';
-            fileFormatSelect.value = 'jpg';
-            qualitySlider.value = 90;
-            qualityDisplay.textContent = '90%';
-            brightnessSlider.value = 0;
-            brightnessDisplay.textContent = '0';
-            contrastSlider.value = 0;
-            contrastDisplay.textContent = '0';
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    // Close mobile menu if open
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
             });
         });
     </script>
