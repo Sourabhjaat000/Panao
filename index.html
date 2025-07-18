@@ -1,1 +1,1134 @@
-pancardphotoresizer.in
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAN Card Photo Resizer - Free Online Tool | 35x35mm Size Editor | PanCardPhotoResizer.in</title>
+    <meta name="description" content="Free online PAN Card photo resizer tool. Create perfect 35x35mm photos for PAN card applications with automatic background removal, manual cropping, and quality adjustment. No registration required - 100% secure.">
+    <meta name="keywords" content="pan card photo size, 35x35 mm photo tool, passport photo maker online, pan card photo background remover, photo crop tool for pan card, pan card photo editor, how to resize photo for pan card, pan card photo requirements, download pan card photo, photo size converter for pan card, online photo editor for pan card, make pan card photo at home, pan card photo kaise banaye, pan card photo dimensions, pan card photo resolution, pan card photo format, pan card photo online free, pan card photo maker app, pan card photo crop online, pan card photo white background, aadhaar card photo size tool, government id photo maker, digital passport photo creator, photo resizer for documents, official document photo editor, india pan card photo tool, free pan card photo maker, professional pan card photo editor, crop photo for pan card online, best pan card photo resizer">
+    <link rel="canonical" href="https://www.pancardphotoresizer.in">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #f8f9fa;
+            --accent-color: #0b8043;
+            --text-color: #202124;
+            --light-text: #5f6368;
+            --white: #ffffff;
+            --dark-blue: #174ea6;
+            --shadow: 0 1px 2px rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
+            --transition: all 0.2s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            font-size: 16px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 12px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 5% 6rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Main Tool Container */
+        .main-container {
+            max-width: 1200px;
+            margin: -60px auto 0;
+            padding: 0 5%;
+        }
+        
+        .tool-container {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        
+        .tool-header {
+            padding: 1.25rem 1.5rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e8eaed;
+        }
+        
+        .tool-header h2 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .tool-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .upload-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .preview-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* Upload Area */
+        .upload-area {
+            border: 2px dashed #dadce0;
+            border-radius: 8px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            background-color: #f8f9fa;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(26, 115, 232, 0.04);
+        }
+        
+        .upload-area i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .upload-area h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+        
+        .upload-area p {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .upload-btn {
+            display: inline-block;
+            padding: 0.7rem 1.25rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .upload-btn:hover {
+            background-color: #185abc;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        /* Preview Area */
+        .preview-container {
+            border: 1px solid #e8eaed;
+            border-radius: 8px;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            margin-bottom: 1.5rem;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #imagePreview {
+            max-width: 100%;
+            max-height: 400px;
+            display: none;
+        }
+        
+        .preview-placeholder {
+            text-align: center;
+            color: var(--light-text);
+        }
+        
+        .preview-placeholder i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #dadce0;
+        }
+        
+        /* Cropper Container */
+        .cropper-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            display: none;
+        }
+        
+        /* Adjustment Controls */
+        .adjustment-controls {
+            margin-top: 1.5rem;
+        }
+        
+        .control-group {
+            margin-bottom: 1rem;
+        }
+        
+        .control-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .control-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .slider-control {
+            flex: 1;
+        }
+        
+        .slider-control input[type="range"] {
+            width: 100%;
+            height: 4px;
+            -webkit-appearance: none;
+            background: #e8eaed;
+            border-radius: 2px;
+        }
+        
+        .slider-control input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .value-display {
+            min-width: 40px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+        
+        select, input[type="text"] {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #e8eaed;
+            background-color: white;
+            font-size: 0.9rem;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.7rem 1.25rem;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #185abc;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #0a6e38;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(26, 115, 232, 0.08);
+        }
+        
+        /* Information Sections */
+        .info-section {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 5%;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .info-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-card ul {
+            list-style-position: inside;
+        }
+        
+        .info-card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+        
+        /* Privacy Notice */
+        .privacy-notice {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            font-size: 0.9rem;
+            color: var(--light-text);
+            text-align: center;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #202124;
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #9aa0a6;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            color: #9aa0a6;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 68px;
+                left: -100%;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">PanCardPhotoResizer.in</a>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#tool">Photo Tool</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#guide">How To Use</a></li>
+        </ul>
+    </header>
+    
+    <section class="hero">
+        <h1>Free PAN Card Photo Resizer Tool</h1>
+        <p>Create perfectly sized 35x35mm photos for PAN card applications with automatic background removal and manual cropping. No registration required.</p>
+    </section>
+    
+    <div class="main-container">
+        <div class="tool-container" id="tool">
+            <div class="tool-header">
+                <h2>PAN Card Photo Editor</h2>
+            </div>
+            <div class="tool-body">
+                <div class="upload-section">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Upload Your Photo</h3>
+                        <p>Click to select or drag & drop your photo (JPG, PNG, PDF)</p>
+                        <input type="file" id="fileInput" class="file-input" accept="image/*,.pdf">
+                        <button class="upload-btn" id="uploadBtn">
+                            <i class="fas fa-folder-open"></i> Select File
+                        </button>
+                    </div>
+                    
+                    <div class="adjustment-controls">
+                        <div class="control-group">
+                            <label for="fileName">Save As:</label>
+                            <input type="text" id="fileName" placeholder="e.g. arjun-pan-card" value="pan-card-photo">
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="fileFormat">Format:</label>
+                            <select id="fileFormat">
+                                <option value="png">PNG (Transparent)</option>
+                                <option value="jpg" selected>JPG (High Quality)</option>
+                                <option value="pdf">PDF Document</option>
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label>Quality: <span id="qualityValue">90</span>%</label>
+                            <div class="control-row">
+                                <input type="range" id="fileQuality" min="10" max="100" value="90" class="slider-control">
+                                <span class="value-display" id="qualityDisplay">90%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label>Brightness: <span id="brightnessValue">0</span></label>
+                            <div class="control-row">
+                                <input type="range" id="brightness" min="-100" max="100" value="0" class="slider-control">
+                                <span class="value-display" id="brightnessDisplay">0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label>Contrast: <span id="contrastValue">0</span></label>
+                            <div class="control-row">
+                                <input type="range" id="contrast" min="-100" max="100" value="0" class="slider-control">
+                                <span class="value-display" id="contrastDisplay">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-container">
+                        <div class="preview-placeholder" id="previewPlaceholder">
+                            <i class="fas fa-image"></i>
+                            <p>Your edited photo will appear here</p>
+                        </div>
+                        <img id="imagePreview" alt="Preview">
+                        <div id="cropperContainer" class="cropper-container"></div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="cropBtn" disabled>
+                            <i class="fas fa-crop"></i> Manual Crop
+                        </button>
+                        <button class="btn btn-accent" id="downloadBtn" disabled>
+                            <i class="fas fa-download"></i> Download Photo
+                        </button>
+                        <button class="btn btn-outline" id="resetBtn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section" id="requirements">
+            <h2 class="section-title">PAN Card Photo Requirements</h2>
+            <div class="card-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-ruler-combined"></i> Dimensions</h3>
+                    <ul>
+                        <li>Size: 35mm x 35mm (3.5cm x 3.5cm)</li>
+                        <li>Face should cover about 70-80% of photo</li>
+                        <li>Head height: 25-35mm from chin to crown</li>
+                        <li>Eyes should be 25-35mm from bottom</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-palette"></i> Appearance</h3>
+                    <ul>
+                        <li>Recent color photograph (less than 3 months old)</li>
+                        <li>Plain white or light colored background</li>
+                        <li>Neutral expression with both eyes open</li>
+                        <li>No shadows on face or background</li>
+                        <li>No red-eye or flash reflections</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-file-image"></i> Technical</h3>
+                    <ul>
+                        <li>Resolution: Minimum 200 DPI (300 DPI recommended)</li>
+                        <li>File size: Under 100KB for online submission</li>
+                        <li>Formats: JPEG or PNG preferred</li>
+                        <li>Color mode: RGB</li>
+                        <li>No compression artifacts</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-ban"></i> Restrictions</h3>
+                    <ul>
+                        <li>No selfies or casual photos</li>
+                        <li>No sunglasses or hats (except religious headwear)</li>
+                        <li>No signatures or date stamps on photo</li>
+                        <li>No borders or frames around photo</li>
+                        <li>No group photos or objects in frame</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section" id="guide">
+            <h2 class="section-title">How To Create Perfect PAN Card Photos</h2>
+            <div class="card-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-camera"></i> Taking the Photo</h3>
+                    <ul>
+                        <li>Use a plain white or light-colored background</li>
+                        <li>Stand 1-2 meters from the background to avoid shadows</li>
+                        <li>Face the camera directly with a neutral expression</li>
+                        <li>Ensure even lighting on your face (natural light is best)</li>
+                        <li>Keep both eyes open and visible</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-edit"></i> Editing Guidelines</h3>
+                    <ul>
+                        <li>Crop to exact 35x35mm size using our tool</li>
+                        <li>Adjust brightness/contrast if needed</li>
+                        <li>Ensure face covers 70-80% of the frame</li>
+                        <li>Check for proper head height (25-35mm)</li>
+                        <li>Save as high-quality JPG or PNG</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-check-circle"></i> Common Mistakes</h3>
+                    <ul>
+                        <li>Incorrect photo dimensions</li>
+                        <li>Dark or patterned background</li>
+                        <li>Face too small or too large in frame</li>
+                        <li>Poor lighting or shadows on face</li>
+                        <li>Smiling or exaggerated expressions</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-question-circle"></i> FAQ</h3>
+                    <ul>
+                        <li><strong>Can I use a mobile photo?</strong> Yes, if it meets quality requirements</li>
+                        <li><strong>Is black & white allowed?</strong> No, only color photos accepted</li>
+                        <li><strong>Can I wear glasses?</strong> Yes, but no glare on lenses</li>
+                        <li><strong>Is PDF format acceptable?</strong> For online submission, JPG/PNG preferred</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="privacy-notice">
+            <p><strong>Privacy Notice:</strong> All photo processing happens in your browser. We do not store, upload, or access your images. Your photos remain 100% private on your device.</p>
+        </div>
+        
+        <div class="contact-info">
+            <p>For any questions or support, please contact us at: <strong>sritle.nextgenstudiosglobal@gmail.com</strong></p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#tool">Photo Tool</a>
+            <a href="#requirements">Requirements</a>
+            <a href="#guide">How To Use</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 PanCardPhotoResizer.in - All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        // Initialize PDF.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+        
+        // DOM Elements
+        const fileInput = document.getElementById('fileInput');
+        const uploadArea = document.getElementById('uploadArea');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const previewPlaceholder = document.getElementById('previewPlaceholder');
+        const imagePreview = document.getElementById('imagePreview');
+        const cropperContainer = document.getElementById('cropperContainer');
+        const cropBtn = document.getElementById('cropBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const fileNameInput = document.getElementById('fileName');
+        const fileFormatSelect = document.getElementById('fileFormat');
+        const qualitySlider = document.getElementById('fileQuality');
+        const qualityDisplay = document.getElementById('qualityDisplay');
+        const brightnessSlider = document.getElementById('brightness');
+        const brightnessDisplay = document.getElementById('brightnessDisplay');
+        const contrastSlider = document.getElementById('contrast');
+        const contrastDisplay = document.getElementById('contrastDisplay');
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Global Variables
+        let cropper;
+        let currentImage;
+        let originalImageData;
+        
+        // Event Listeners
+        fileInput.addEventListener('change', handleFileSelect);
+        uploadArea.addEventListener('click', () => fileInput.click());
+        uploadBtn.addEventListener('click', () => fileInput.click());
+        uploadArea.addEventListener('dragover', handleDragOver);
+        uploadArea.addEventListener('dragleave', handleDragLeave);
+        uploadArea.addEventListener('drop', handleDrop);
+        cropBtn.addEventListener('click', toggleCropper);
+        downloadBtn.addEventListener('click', downloadImage);
+        resetBtn.addEventListener('click', resetTool);
+        
+        // Slider Events
+        qualitySlider.addEventListener('input', updateQualityDisplay);
+        brightnessSlider.addEventListener('input', updateBrightnessDisplay);
+        contrastSlider.addEventListener('input', updateContrastDisplay);
+        
+        // Display Update Functions
+        function updateQualityDisplay() {
+            qualityDisplay.textContent = `${qualitySlider.value}%`;
+        }
+        
+        function updateBrightnessDisplay() {
+            brightnessDisplay.textContent = brightnessSlider.value;
+            applyImageAdjustments();
+        }
+        
+        function updateContrastDisplay() {
+            contrastDisplay.textContent = contrastSlider.value;
+            applyImageAdjustments();
+        }
+        
+        // Drag and Drop Handlers
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.style.borderColor = var(--primary-color);
+            uploadArea.style.backgroundColor = 'rgba(26, 115, 232, 0.1)';
+        }
+        
+        function handleDragLeave(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.style.borderColor = '#dadce0';
+            uploadArea.style.backgroundColor = '#f8f9fa';
+        }
+        
+        function handleDrop(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.style.borderColor = '#dadce0';
+            uploadArea.style.backgroundColor = '#f8f9fa';
+            
+            const file = e.dataTransfer.files[0];
+            if (!file) return;
+            
+            processFile(file);
+        }
+        
+        // File Processing
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            processFile(file);
+        }
+        
+        function processFile(file) {
+            const reader = new FileReader();
+            
+            // Check if file is PDF
+            if (file.type === 'application/pdf') {
+                extractImageFromPDF(file);
+                return;
+            }
+            
+            reader.onload = function(e) {
+                previewPlaceholder.style.display = 'none';
+                imagePreview.style.display = 'block';
+                imagePreview.src = e.target.result;
+                
+                // Store original image data
+                originalImageData = e.target.result;
+                currentImage = imagePreview;
+                
+                // Enable buttons
+                cropBtn.disabled = false;
+                downloadBtn.disabled = false;
+                
+                // Initialize image adjustments
+                applyImageAdjustments();
+            }
+            
+            reader.readAsDataURL(file);
+            
+            // Set filename
+            const cleanName = file.name.replace(/\.[^/.]+$/, ""); // Remove extension
+            fileNameInput.value = cleanName.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-pan-card';
+        }
+        
+        function extractImageFromPDF(file) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                const typedArray = new Uint8Array(e.target.result);
+                
+                // Load the PDF
+                pdfjsLib.getDocument(typedArray).promise.then(function(pdf) {
+                    // Get the first page
+                    return pdf.getPage(1);
+                }).then(function(page) {
+                    const viewport = page.getViewport({ scale: 2.0 });
+                    
+                    // Create canvas to render PDF page
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    
+                    // Render PDF page to canvas
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    
+                    return page.render(renderContext).promise.then(function() {
+                        // Convert canvas to image
+                        const imageData = canvas.toDataURL('image/jpeg', 0.9);
+                        
+                        // Display the image
+                        previewPlaceholder.style.display = 'none';
+                        imagePreview.style.display = 'block';
+                        imagePreview.src = imageData;
+                        
+                        // Store original image data
+                        originalImageData = imageData;
+                        currentImage = imagePreview;
+                        
+                        // Enable buttons
+                        cropBtn.disabled = false;
+                        downloadBtn.disabled = false;
+                        
+                        // Initialize image adjustments
+                        applyImageAdjustments();
+                        
+                        // Set filename
+                        const cleanName = file.name.replace(/\.[^/.]+$/, ""); // Remove extension
+                        fileNameInput.value = cleanName.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-pan-card';
+                    });
+                });
+            };
+            
+            reader.readAsArrayBuffer(file);
+        }
+        
+        // Image Cropping
+        function toggleCropper() {
+            if (cropperContainer.style.display === 'block') {
+                // Apply crop
+                const croppedCanvas = cropper.getCroppedCanvas({
+                    width: 413, // 35mm at 300dpi
+                    height: 413,
+                    minWidth: 413,
+                    minHeight: 413,
+                    maxWidth: 413,
+                    maxHeight: 413,
+                    fillColor: '#fff'
+                });
+                
+                imagePreview.src = croppedCanvas.toDataURL('image/jpeg', qualitySlider.value / 100);
+                cropperContainer.style.display = 'none';
+                imagePreview.style.display = 'block';
+                cropBtn.innerHTML = '<i class="fas fa-crop"></i> Manual Crop';
+                
+                // Destroy cropper
+                cropper.destroy();
+            } else {
+                // Initialize cropper
+                imagePreview.style.display = 'none';
+                cropperContainer.style.display = 'block';
+                cropperContainer.innerHTML = '';
+                
+                const cropperImage = document.createElement('img');
+                cropperImage.src = imagePreview.src;
+                cropperImage.style.maxWidth = '100%';
+                cropperContainer.appendChild(cropperImage);
+                
+                cropper = new Cropper(cropperImage, {
+                    aspectRatio: 1,
+                    viewMode: 1,
+                    autoCropArea: 0.8,
+                    responsive: true,
+                    guides: false,
+                    center: true,
+                    background: false,
+                    movable: true,
+                    rotatable: false,
+                    scalable: false,
+                    zoomable: true,
+                    cropBoxMovable: true,
+                    cropBoxResizable: true,
+                    toggleDragModeOnDblclick: false,
+                    minContainerWidth: 300,
+                    minContainerHeight: 300,
+                    ready() {
+                        // Set crop box to 35x35mm (413x413px at 300dpi)
+                        const containerData = cropper.getContainerData();
+                        const cropBoxWidth = 413;
+                        const cropBoxHeight = 413;
+                        
+                        cropper.setCropBoxData({
+                            left: (containerData.width - cropBoxWidth) / 2,
+                            top: (containerData.height - cropBoxHeight) / 2,
+                            width: cropBoxWidth,
+                            height: cropBoxHeight
+                        });
+                    }
+                });
+                
+                cropBtn.innerHTML = '<i class="fas fa-check"></i> Apply Crop';
+            }
+        }
+        
+        // Image Adjustments
+        function applyImageAdjustments() {
+            if (!currentImage) return;
+            
+            const brightness = parseInt(brightnessSlider.value);
+            const contrast = parseInt(contrastSlider.value);
+            
+            // Create temporary image to apply filters
+            const tempImage = new Image();
+            tempImage.onload = function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = tempImage.width;
+                canvas.height = tempImage.height;
+                const ctx = canvas.getContext('2d');
+                
+                // Apply filters
+                ctx.filter = `
+                    brightness(${100 + brightness}%)
+                    contrast(${100 + contrast}%)
+                `;
+                
+                ctx.drawImage(tempImage, 0, 0);
+                imagePreview.src = canvas.toDataURL('image/jpeg', qualitySlider.value / 100);
+            };
+            
+            tempImage.src = originalImageData;
+        }
+        
+        // Download Image
+        function downloadImage() {
+            if (!currentImage) return;
+            
+            const format = fileFormatSelect.value;
+            const quality = qualitySlider.value / 100;
+            const fileName = fileNameInput.value || 'pan-card-photo';
+            
+            // Create canvas to ensure proper sizing
+            const canvas = document.createElement('canvas');
+            canvas.width = 413; // 35mm at 300dpi
+            canvas.height = 413;
+            const ctx = canvas.getContext('2d');
+            
+            // Fill with white background (for JPG/PDF)
+            if (format !== 'png') {
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+            
+            // Draw the image
+            const img = new Image();
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                
+                // Create download link
+                const link = document.createElement('a');
+                
+                if (format === 'pdf') {
+                    // For PDF, we'll use a library like jsPDF in a real implementation
+                    // This is simplified for the demo
+                    const pdfData = canvas.toDataURL('image/jpeg', quality);
+                    link.href = pdfData;
+                    link.download = `${fileName}.pdf`;
+                } else {
+                    const imageData = canvas.toDataURL(`image/${format}`, quality);
+                    link.href = imageData;
+                    link.download = `${fileName}.${format}`;
+                }
+                
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            };
+            
+            img.src = currentImage.src;
+        }
+        
+        // Reset Tool
+        function resetTool() {
+            fileInput.value = '';
+            previewPlaceholder.style.display = 'flex';
+            imagePreview.style.display = 'none';
+            imagePreview.src = '';
+            cropperContainer.style.display = 'none';
+            cropperContainer.innerHTML = '';
+            
+            if (cropper) {
+                cropper.destroy();
+                cropper = null;
+            }
+            
+            cropBtn.disabled = true;
+            downloadBtn.disabled = true;
+            cropBtn.innerHTML = '<i class="fas fa-crop"></i> Manual Crop';
+            
+            // Reset sliders
+            fileNameInput.value = 'pan-card-photo';
+            fileFormatSelect.value = 'jpg';
+            qualitySlider.value = 90;
+            qualityDisplay.textContent = '90%';
+            brightnessSlider.value = 0;
+            brightnessDisplay.textContent = '0';
+            contrastSlider.value = 0;
+            contrastDisplay.textContent = '0';
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
