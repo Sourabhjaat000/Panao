@@ -1,165 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Domains for Sale</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background: #ffffff;
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 2px solid #e5e5e5;
-    }
-    header h1 {
-      font-size: 28px;
-      margin: 0;
-      color: #222;
-    }
-    header p {
-      margin: 10px 0 0;
-      font-size: 18px;
-      font-weight: bold;
-      color: #0078D7;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .domain-list {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-    }
-    .domain-list h2 {
-      margin-bottom: 15px;
-      font-size: 22px;
-      border-left: 5px solid #0078D7;
-      padding-left: 10px;
-      color: #0078D7;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    ul li {
-      padding: 12px 15px;
-      margin-bottom: 8px;
-      background: #fdfdfd;
-      border: 1px solid #eaeaea;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 500;
-      transition: all 0.2s;
-      word-break: break-all;
-    }
-    ul li:hover {
-      background: #f3f9ff;
-      border-color: #0078D7;
-      transform: translateX(4px);
-    }
-    .form-container {
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
-    .form-container h2 {
-      margin-bottom: 20px;
-      font-size: 22px;
-      border-left: 5px solid #0078D7;
-      padding-left: 10px;
-      color: #0078D7;
-    }
-    form label {
-      display: block;
-      margin: 10px 0 5px;
-      font-weight: 600;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      font-size: 15px;
-    }
-    form button {
-      background: #0078D7;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    form button:hover {
-      background: #005bb5;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #555;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PremiumDomain.com | Exclusive Domain Acquisition Opportunity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #e9ecef;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #000;
+            letter-spacing: 1px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .domain-name {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000;
+            margin: 25px 0;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: #495057;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .timer-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        
+        .timer-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .timer-box {
+            background: #000;
+            color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            min-width: 90px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timer-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .timer-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 1px;
+            color: #dee2e6;
+        }
+        
+        .offer-form {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .form-title {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ced4da;
+            background: #fff;
+            border-radius: 6px;
+            color: #495057;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        button {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        button:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 25px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .feature i {
+            font-size: 2.2rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .feature p {
+            color: #495057;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #6c757d;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .urgency-note {
+            text-align: center;
+            font-style: italic;
+            color: #6c757d;
+            margin: 15px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .domain-name {
+                font-size: 2.2rem;
+            }
+            
+            .timer-box {
+                min-width: 70px;
+                padding: 15px;
+            }
+            
+            .timer-value {
+                font-size: 1.8rem;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .feature {
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Premium Domains For Sale</h1>
-    <p>Contact Directly: <a href="mailto:nextgenstudiosglobal@gmail.com">nextgenstudiosglobal@gmail.com</a></p>
-  </header>
+    <div class="container">
+        <header>
+            <div class="logo">PREMIUM DOMAINS</div>
+            <h1>Exclusive Domain Acquisition Opportunity</h1>
+            <div class="domain-name">These domain is for sale interested salers submit your interest</div>
+            <p class="description">
+                This premium domain is currently available for acquisition. A perfect digital asset for innovative companies, 
+                tech startups, and forward-thinking organizations. Secure this valuable brand asset to elevate your online presence.
+            </p>
+        </header>
+        
+        <div class="timer-container">
+            <h2 class="timer-title">Limited Time Offering - Act Now!</h2>
+            <div class="timer">
+                <div class="timer-box">
+                    <div class="timer-value" id="days">00</div>
+                    <div class="timer-label">Days</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="hours">00</div>
+                    <div class="timer-label">Hours</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="minutes">00</div>
+                    <div class="timer-label">Minutes</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="seconds">00</div>
+                    <div class="timer-label">Seconds</div>
+                </div>
+            </div>
+            <p class="urgency-note">This domain will be released to the public if not acquired by the expiration of this timer</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-medal"></i>
+                <h3>Premium Quality</h3>
+                <p>Short, memorable, and brandable domain name with high commercial value</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-search"></i>
+                <h3>SEO Advantage</h3>
+                <p>Inherent search engine optimization benefits from a keyword-rich domain</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-globe"></i>
+                <h3>Global Appeal</h3>
+                <p>Works for any business worldwide with instant recognition and recall</p>
+            </div>
+        </div>
+        
+        <div class="offer-form">
+            <h2 class="form-title">Submit Your Offer</h2>
+            <form id="domainOfferForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="offer">Offer Amount (USD)</label>
+                    <input type="number" id="offer" placeholder="Enter your offer amount" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" placeholder="Tell us about your intended use for the domain or any other details"></textarea>
+                </div>
+                <button type="submit">Submit Offer <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+        
+        <footer>
+            <p>© 2023 Premium Domains. All rights reserved.</p>
+            <p>Direct inquiries: nextgenstudiosglobal@gmail.com</p>
+        </footer>
+    </div>
 
-  <main>
-    <section class="domain-list">
-      <h2>Available Domains</h2>
-      <ul>
-        <li>yanolja-driving-training-tel-070-8018-9741--b4jm22.site</li>
-        <li>deluxegebzeescort.xyz</li>
-        <li>bollywoodfever.site</li>
-        <li>pancardphotoresizer.in</li>
-        <li>ytmarket.store</li>
-        <li>animestuff.shop</li>
-      </ul>
-    </section>
-
-    <section class="form-container">
-      <h2>Send Your Offer</h2>
-      <form action="mailto:nextgenstudiosglobal@gmail.com" method="post" enctype="text/plain">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="contact">Contact Number</label>
-        <input type="text" id="contact" name="contact">
-
-        <label for="offer">Your Offer Price</label>
-        <input type="text" id="offer" name="offer">
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <button type="submit">Send Offer</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Domain Marketplace. All rights reserved.
-  </footer>
+    <script>
+        // Countdown Timer
+        function updateTimer() {
+            const countDownDate = new Date();
+            countDownDate.setDate(countDownDate.getDate() + 7); // Set to 7 days from now
+            
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("days").innerText = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+                
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById("days").innerText = "00";
+                    document.getElementById("hours").innerText = "00";
+                    document.getElementById("minutes").innerText = "00";
+                    document.getElementById("seconds").innerText = "00";
+                }
+            }, 1000);
+        }
+        
+        // Form Submission
+        document.getElementById("domainOfferForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const offer = document.getElementById("offer").value;
+            const message = document.getElementById("message").value;
+            
+            const subject = "Domain Offer: YOURDOMAIN.COM";
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0AOffer: $${offer}%0D%0AMessage: ${message}`;
+            
+            window.location.href = `mailto:nextgenstudiosglobal@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Show confirmation message
+            alert("Thank you for your offer! You are now being redirected to email to complete your submission.");
+        });
+        
+        // Initialize timer when page loads
+        window.onload = function() {
+            updateTimer();
+        };
+    </script>
 </body>
 </html>
